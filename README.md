@@ -6,7 +6,7 @@ Zenpress (Далее EmpireCMS) - это проект по разработке 
 Была реализована поддержка механизма плагинов и механизма темы! (За что спасибо китайским друзьям, дальше мы сами.)
 
 
-Поддрежка баз данных PostgreSQL, MySQL, Sqlite3, Go/Leveldb, Boltdb, Tidb
+Поддержка баз данных PostgreSQL, MySQL, Sqlite3, Go/Leveldb, Boltdb, Tidb
 
 Системные требования
 ===
