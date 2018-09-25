@@ -8,32 +8,32 @@ type Site struct {
 	Path   string `gorm:"not null default '' index(domain) VARCHAR(100)"`
 }
 
-// NewSite 创建站点
+// NewSite
 func NewSite(site *Site) (db *gorm.DB) {
 	db = Database.Create(site)
 	return
 }
 
-// AddSite 新增站点
+// AddSite
 func AddSite(domain, path string) (db *gorm.DB) {
 	db = Database.Create(&Site{Domain: domain, Path: path})
 	return
 }
 
-// GetSite 获得站点
+// GetSite
 func GetSite(id uint64) (db *gorm.DB, Site Site) {
 	db = Database.First(&Site, "id = ?", id)
 	return
 }
 
-// UpdateSite 更新站点
+// UpdateSite
 func UpdateSite(id uint64, domain, path string) (db *gorm.DB, site Site) {
 	site = Site{Domain: domain, Path: path}
 	db = Database.Model(&site).Update("id", id)
 	return
 }
 
-// DeleteSite 删除站点
+// DeleteSite
 func DeleteSite(id uint64) (db *gorm.DB) {
 	db = Database.Delete(Site{}, "id = ?", id)
 	return

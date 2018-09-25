@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
+	goswitchr "github.com/criminalist/gopress/module/switchr"
 	gomakross "github.com/insionng/makross"
 	"github.com/insionng/makross/cache"
 	"github.com/insionng/makross/captcha"
@@ -13,7 +14,6 @@ import (
 	gopongor "github.com/insionng/makross/pongor"
 	gosession "github.com/insionng/makross/session"
 	gostatic "github.com/insionng/makross/static"
-	goswitchr "github.com/criminalist/gopress/module/switchr"
 
 	"github.com/criminalist/gopress/module/qimport"
 	"qlang.io/cl/qlang"
@@ -91,7 +91,7 @@ func Codes(theme string) []byte {
 	var themeDir = "content/theme"
 	var themeApps, rootApps string
 
-	//读取前端逻辑代码
+	//Логика
 	files := []string{"IndexHandler", "SingleHandler", "PageHandler", "CategoryHandler", "TagHandler", "TaxonomyHandler", "AuthorHandler", "AttachmentHandler", "DateHandler", "ArchiveHandler", "SearchHandler", "NotFoundHandler"}
 	for _, file := range files {
 		var b []byte
@@ -104,7 +104,6 @@ func Codes(theme string) []byte {
 		themeApps = themeApps + fmt.Sprintf("%s\n", b)
 	}
 
-	//读取后端逻辑代码
 	rootfiles := []string{"DashboardHandler", "ArticleHandler", "MediaHandler", "LinkHandler", "PageHandler", "CommentHandler", "ThemeHandler", "PluginHandler", "UserHandler", "ToolHandler", "OptionHandler", "NotFoundHandler"}
 	for _, file := range rootfiles {
 		var b []byte
@@ -119,7 +118,7 @@ func Codes(theme string) []byte {
 		}
 	}
 
-	//读取主程序逻辑
+	//Прочитать основную логику программы
 	var application = fmt.Sprintf("%s/%s", applicationDir, "Application.app")
 	appCode, e := readfile(application)
 	if e != nil {
@@ -138,7 +137,7 @@ func FrontCodes(theme string) []byte {
 	var themeDir = "content/theme"
 	var themeApps, rootApps string
 
-	//读取前端控制器逻辑代码
+	//Прочитать логический код переднего контроллера
 	files := []string{"IndexHandler", "SingleHandler", "PageHandler", "CategoryHandler", "TagHandler", "TaxonomyHandler", "AuthorHandler", "AttachmentHandler", "DateHandler", "ArchiveHandler", "SearchHandler", "SigninHandler", "NotFoundHandler"}
 	for _, file := range files {
 		var b []byte
@@ -151,7 +150,7 @@ func FrontCodes(theme string) []byte {
 		themeApps = themeApps + fmt.Sprintf("%s\n", b)
 	}
 
-	//读取前端路由逻辑
+	//Read front-end routing logic
 	var application = fmt.Sprintf("%s/%s", applicationDir, "Frontkend.app")
 	appCode, e := readfile(application)
 	if e != nil {
@@ -170,7 +169,7 @@ func BackCodes(theme string) []byte {
 	var themeDir = "content/theme"
 	var themeApps, rootApps string
 
-	//读取后端逻辑代码
+	//Read backend logic code
 	rootfiles := []string{"DashboardHandler", "ArticleHandler", "MediaHandler", "LinkHandler", "PageHandler", "CommentHandler", "ThemeHandler", "PluginHandler", "UserHandler", "ToolHandler", "OptionHandler", "NotFoundHandler"}
 	for _, file := range rootfiles {
 		var b []byte
@@ -185,7 +184,7 @@ func BackCodes(theme string) []byte {
 		}
 	}
 
-	//读取后端路由逻辑
+	//Read backend routing logic
 	var application = fmt.Sprintf("%s/%s", applicationDir, "Backend.app")
 	appCode, e := readfile(application)
 	if e != nil {
@@ -232,7 +231,7 @@ func GetAppByTheme(theme string, filter bool, reload bool) (*gomakross.Makross, 
 	appFrontCode := FrontCodes(theme)
 	err = VmByte(appFrontCode)
 	if err != nil {
-		panic(fmt.Errorf("#1 执行前端代码出错：%v", err))
+		panic(fmt.Errorf("#1 Error executing front-end code: %v", err))
 	}
 
 	m, okay := Q.GetVar("app")
@@ -252,7 +251,7 @@ func GetAppByTheme(theme string, filter bool, reload bool) (*gomakross.Makross, 
 
 	err = VmByte(appBackCode)
 	if err != nil {
-		panic(fmt.Errorf("#1 执行后端代码出错：%v", err))
+		panic(fmt.Errorf("#1 Error executing the backend code: %v", err))
 	}
 
 	m, okay = Q.GetVar("app")
