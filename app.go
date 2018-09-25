@@ -95,7 +95,7 @@ func main() {
 
 	done := make(chan bool)
 
-	//执行主题逻辑
+	//Execute the theme logic
 	var theme = "default"
 	var filter, reload bool
 	filter = true
@@ -154,7 +154,7 @@ func main() {
 	fmt.Printf("Application pid is %d\n", os.Getpid())
 	fmt.Println(".........................................................")
 
-	//热更新监控目录
+	//Hot update monitoring directory
 	var applicationDir = "content/application"
 	var applicationRootDir = fmt.Sprintf("%s/root", applicationDir)
 
@@ -186,5 +186,4 @@ func main() {
 	// Hang so program doesn't exit
 	<-done
 	watcher.Close()
-
 }

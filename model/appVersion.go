@@ -6,7 +6,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// AppVersion 应用版本信息
+// AppVersion comments
 type AppVersion struct {
 	ID          uint64 `gorm:"primary_key"`
 	AppID       uint64

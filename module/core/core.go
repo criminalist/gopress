@@ -200,7 +200,8 @@ func BackCodes(theme string) []byte {
 }
 
 func GetAppByTheme(theme string, filter bool, reload bool) (*gomakross.Makross, bool) {
-	logWriter, err := os.OpenFile("content/storage/logs/makross.log", os.O_CREATE, os.ModePerm)
+	logWriter, err := os.OpenFile("content/storage/logs/makross.log", os.O_CREATE|os.O_WRONLY, os.ModePerm)
+
 	if err != nil {
 		panic(fmt.Errorf("Create makross log file error:%v", err))
 	}

@@ -2,9 +2,7 @@ package model
 
 import (
 	"os"
-
 	"github.com/jinzhu/gorm"
-
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
@@ -18,8 +16,8 @@ import (
 const (
 	app = "./"
 
-	DataType            = "sqlite"
-	DatabaseTablePrefix = "zen_"
+	DataType string   = "sqlite"
+	DatabaseTablePrefix string = "zen_"
 )
 
 var (
@@ -27,7 +25,7 @@ var (
 	HasDatabase bool
 
 	//DatabaseConn        = "root:rootpass@/wp?charset=utf8"
-	DatabaseConn = "content/storage/data/sqlite.db"
+	DatabaseConn string = "content/storage/data/sqlite.db"
 	//DatabaseConn = "../content/storage/data/sqlite_test.db"
 )
 
@@ -111,5 +109,5 @@ func Ping() error {
 
 func message() {
 	fmt.Println("-----------------------------------------------------------")
-	fmt.Println("The Zenpress system has started!")
+	fmt.Println("The CMS system has started!")
 }
