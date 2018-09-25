@@ -20,7 +20,7 @@ Zenpress (Далее EmpireCMS) - это проект по разработке 
 
     go build
     
-    screen -dmS zenpress ./zenpress
+    screen -dmS gopress ./gopress
 
 
 
