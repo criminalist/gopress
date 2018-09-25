@@ -13,14 +13,7 @@
       <h3>合作伙伴</h3>
       <div class="textwidget">
         <ul class="footer-partner">
-              <li><a ref="nofollow" href="http://www.aliyun.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/20564a40-569b-4152-9cd9-8d5bd5ca9a4f/aly.png" height="16px"></a></li>
-              <li><a ref="nofollow" href="http://qcloud.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/b18b965b-65c2-4459-a378-ceeeae135f25/txy.png" alt="" height="21px" style="margin-top:-8px"></a></li>
-              <li><a ref="nofollow" href="http://qingcloud.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/4cf18275-e58e-4f6d-9b26-21e34ec71c7f/qy.png" alt="" height="21px" style="margin-top:-8px"></a></li>
-              <li><a ref="nofollow" href="https://www.yunpian.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/ea9523c9-0810-48c7-8047-d1a70a1a2caf/yp.png" alt="" height="17px"></a></li>
-              <li><a ref="nofollow" href="http://upyun.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/18863924-bd55-4645-8c12-6aef52e6c4f7/upy.png" alt="" height="11px"></a></li>
-              <li><a ref="nofollow" href="http://qiniu.com/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/4018d480-1ed0-4db2-9d75-a2404bc146b0/qny.png" alt="" height="17px"></a></li>
-              <li><a ref="nofollow" href="http://dnspod.cn/" class="external" target="_blank"><img src="http://a.36krcnd.com/nil_class/03706ea3-317b-415f-ad2f-84c7000bae7b/dp.png" alt="" height="10px"></a></li>
-              <li><a ref="nofollow" href="http://getui.com/" class="external" target="_blank"><img src="http://krplus-pic.b0.upaiyun.com/getui.png" height="22px" style="margin-top:-8px"></a></li>
+              
         </ul>
       </div>
 		</section>
@@ -43,7 +36,7 @@
 </footer>
 
 <div class="fixed-tools J_fixedTools show">
-	<a class="icon-qr" href="javascript:void(0)"><span class="qr"><img alt="微信" src="/images/qrcode.png" /></span></a>	<a class="icon-arrow-up J_up" href="javascript:void(0)"></a>
+	<a class="icon-qr" href="javascript:void(0)"><span class="qr"><img alt="" src="/images/qrcode.png" /></span></a>	<a class="icon-arrow-up J_up" href="javascript:void(0)"></a>
 </div>
 
 <div id="sign" class="sign">
@@ -53,7 +46,7 @@
         <h3>登录<p class="status"></p></h3>
         <p>
             <label class="icon" for="username"><i class="fa fa-user"></i></label>
-            <input class="input-control" id="username" type="text" placeholder="请输入用户名" name="username" required="" aria-required="true">
+            <input class="input-control" id="username" type="text" placeholder="Имя пользователя" name="username" required="" aria-required="true">
         </p>
         <p>
             <label class="icon" for="password"><i class="fa fa-lock"></i></label>
@@ -75,22 +68,22 @@
     {% comment %}
         <div class="other-sign">
             <p>使用第三方帐号快捷登录</p>
-            <div class="2-col"><a class="qqlogin" href="/oauth/qq/?rurl=http://www.at3.net" rel="nofollow"><i class="icon-qq"></i> <span>QQ登录</span></a></div>      	  <div class="2-col"><a class="weibologin" href="oauth/weibo/?rurl=http://www.at3.net" rel="nofollow"><i class="icon-weibo"></i> <span>微博登录</span></a></div>
+            <div class="2-col"></div>      	  
         </div>
       {% endcomment %}
         <div class="sign-tips"></div>
     </div>
     <div class="part registerPart">
     <form id="register" action="/signup" method="post" novalidate="novalidate">
-        <div id="login-active" class="switch">已有账号？快去登录&gt;&gt;</div>
-        <h3>注册<p class="status"></p></h3>    
+        <div id="login-active" class="switch">У вас уже есть учетная запись? Войти в систему&gt;&gt;</div>
+        <h3>Hегистрация<p class="status"></p></h3>    
         <p>
             <label class="icon" for="user_name"><i class="fa fa-user"></i></label>
             <input class="input-control" id="user_name" type="text" name="user_name" placeholder="输入英文用户名" required="" aria-required="true">
         </p>
         <p>
             <label class="icon" for="user_email"><i class="fa fa-envelope"></i></label>
-            <input class="input-control" id="user_email" type="email" name="user_email" placeholder="输入常用邮箱" required="" aria-required="true">
+            <input class="input-control" id="user_email" type="email" name="user_email" placeholder="Введите Email" required="" aria-required="true">
         </p>
         <p>
             <label class="icon" for="user_pass"><i class="fa fa-lock"></i></label>
@@ -101,10 +94,10 @@
             <input class="input-control" id="user_pass2" type="password" name="user_pass2" placeholder="再次输入密码" required="" aria-required="true">
         </p>
         <p id="captcha_inline">
-            <input class="input-control inline" type="text" id="captcha" name="captcha" placeholder="输入验证码" required>
-            <span class="captcha-clk inline">获取验证码</span>
+            <input class="input-control inline" type="text" id="captcha" name="captcha" placeholder="Введите код подтверждения" required>
+            <span class="captcha-clk inline">Получить код подтверждения</span>
             <input type="hidden" name="action" value="atpress_register">
-            <input class="submit inline register-loader" type="button" value="注册" name="submit" style="height: 38px;">
+            <input class="submit inline register-loader" type="button" value="Регистрация" name="submit" style="height: 38px;">
         </p>
         <a class="close"><i class="headericon-close"></i></a>  
         <input type="hidden" id="user_security" name="user_security" value="0069c112b8"><input type="hidden" name="_wp_http_referer" value="/atpress/"> 
